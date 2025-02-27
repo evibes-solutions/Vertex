@@ -9,13 +9,13 @@ export default function Testimonials() {
       quote:
         "Vertex Studio turned our raw footage into a professional, engaging video. Their attention to detail is outstanding!",
       name: "Client Name",
-      image: "/client1.png",
+      image: "/client1.jpg",
     },
     {
       quote:
         "Amazing editing skills! The transitions and effects made our video look like a Hollywood production.",
       name: "Client Name",
-      image: "/client2.png",
+      image: "/client2.jpg",
     },
   ];
 
@@ -54,7 +54,6 @@ export default function Testimonials() {
             }}
             className="bg-[#2A1F4A] p-6 rounded-lg shadow-lg flex items-center space-x-6"
           >
-           
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#635985] flex-shrink-0">
               <Image
                 src={testimonial.image}
@@ -65,13 +64,11 @@ export default function Testimonials() {
               />
             </div>
 
-            
             <div className="flex-1 text-left">
               <p className="text-lg italic text-[#E0CFF2]">
                 {testimonial.quote}
               </p>
 
-             
               <div className="flex mt-3 text-[#FFD700]">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={20} fill="#FFD700" stroke="none" />

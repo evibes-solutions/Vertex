@@ -105,6 +105,19 @@ export default function Workflow() {
           height={500}
           className="rounded-lg shadow-lg"
         />
+
+        {/* <div className="flex justify-center items-center h-screen bg-gray-900">
+          <video
+            className="w-full max-w-4xl rounded-lg shadow-lg"
+            controls
+            autoPlay
+            loop
+            muted
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div> */}
       </motion.div>
     </section>
   );
