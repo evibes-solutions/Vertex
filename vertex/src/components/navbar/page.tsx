@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <Image src="/logo.png" alt="Logo" width={90} height={90} />
-          <h1 className="text-[#635985] text-xl font-bold">VERTEX</h1>
+          <h1 className="text-[#635985] text-xl font-bold">VERTEX STUDIOS</h1>
         </div>
 
         <ul className="hidden md:flex space-x-6">
@@ -43,7 +43,6 @@ export default function Navbar() {
           </li>
         </ul>
 
-  
         <button
           className="md:hidden text-[#635985]"
           onClick={() => setIsOpen(!isOpen)}
@@ -52,7 +51,6 @@ export default function Navbar() {
         </button>
       </div>
 
-    
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center bg-[#18122B] py-4 space-y-4">
           <li>

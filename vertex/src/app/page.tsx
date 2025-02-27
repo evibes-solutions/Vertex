@@ -8,6 +8,7 @@ import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
 
+
 const page = () => {
   return (
     <div>
@@ -19,7 +20,7 @@ const page = () => {
       <Testimonials />
       <WhyChooseUs />
       <Contact />
-      <Footer />
+      <Footer /> 
     </div>
   );
 };

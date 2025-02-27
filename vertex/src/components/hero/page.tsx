@@ -1,17 +1,9 @@
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
+    <section
+      className="relative h-screen flex items-center justify-center text-white bg-cover bg-center"
+      style={{ backgroundImage: "url('/Wedding-Event-Editing.jpeg')" }}
+    >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <div className="relative text-center max-w-2xl px-6 bg-[#18122B] bg-opacity-80 p-10 rounded-lg">
