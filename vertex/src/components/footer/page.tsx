@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaFacebookF,
   FaInstagram,
@@ -10,8 +11,17 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#18122B] text-white py-6">
+    <footer className="bg-[#0E0918] text-white py-6">
       <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <Image
+            src="/logo.png"
+            alt="Vertex Studio Logo"
+            width={200}
+            height={200}
+          />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,35 +38,35 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="flex space-x-6 text-[#E0CFF2] text-2xl"
+          className="flex space-x-6 text-2xl"
         >
           <Link
             href="https://facebook.com/vertexstudio"
             target="_blank"
             aria-label="Facebook"
           >
-            <FaFacebookF className="hover:text-[#B4A5D4] transition" />
+            <FaFacebookF className="text-[#1877F2] hover:opacity-80 transition" />
           </Link>
           <Link
             href="https://instagram.com/vertexstudio"
             target="_blank"
             aria-label="Instagram"
           >
-            <FaInstagram className="hover:text-[#B4A5D4] transition" />
+            <FaInstagram className="text-[#E4405F] hover:opacity-80 transition" />
           </Link>
           <Link
             href="https://linkedin.com/company/vertexstudio"
             target="_blank"
             aria-label="LinkedIn"
           >
-            <FaLinkedinIn className="hover:text-[#B4A5D4] transition" />
+            <FaLinkedinIn className="text-[#0077B5] hover:opacity-80 transition" />
           </Link>
           <Link
             href="https://youtube.com/@vertexstudio"
             target="_blank"
             aria-label="YouTube"
           >
-            <FaYoutube className="hover:text-[#B4A5D4] transition" />
+            <FaYoutube className="text-[#FF0000] hover:opacity-80 transition" />
           </Link>
         </motion.div>
 

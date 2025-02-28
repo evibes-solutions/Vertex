@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#18122B] p-4 shadow-lg">
+    <nav className="bg-[#0E0918] p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <Image src="/logo.png" alt="Logo" width={90} height={90} />
