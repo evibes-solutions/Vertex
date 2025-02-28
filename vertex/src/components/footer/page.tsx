@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0E0918] text-white py-6">
+    <footer className="bg-black text-white py-6">
       <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between">
         <div className="flex items-center space-x-4">
           <Image

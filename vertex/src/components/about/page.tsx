@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#18122B] text-white px-6">
+    <section className="min-h-screen flex items-center justify-center bg-white text-white px-6">
       <div className="max-w-3xl text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-[#635985] mb-6">
           About Vertex Studio

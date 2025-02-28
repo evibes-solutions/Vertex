@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6 flex items-center">
+    <section className="min-h-screen bg-white text-white py-12 px-6 flex items-center">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <motion.h1
@@ -75,8 +75,8 @@ export default function Contact() {
 
         <div className="hidden md:block">
           <Image
-            src="/your-image.jpg"
-            alt="Contact Illustration"
+            src="/picture.jpg"
+            alt="contact"
             className="w-full h-auto rounded-lg shadow-lg"
             width={100}
             height={100}

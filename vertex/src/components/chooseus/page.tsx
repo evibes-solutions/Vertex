@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6 relative overflow-hidden">
+    <section className="min-h-screen bg-white text-white py-12 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 blur-3xl pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto text-center">

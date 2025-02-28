@@ -32,7 +32,7 @@ export default function Workflow() {
   ];
 
   return (
-    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6 flex flex-col lg:flex-row items-center">
+    <section className="min-h-screen bg-white text-white py-12 px-6 flex flex-col lg:flex-row items-center">
       <div className="lg:w-1/2 w-full">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -99,7 +99,7 @@ export default function Workflow() {
         className="lg:w-1/2 w-full flex justify-center mt-12 lg:mt-0"
       >
         <Image
-          src="/logo.png"
+          src="/pic.png"
           alt="Workflow Process"
           width={500}
           height={500}

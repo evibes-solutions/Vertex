@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
@@ -9,37 +8,46 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#0E0918] p-4 shadow-lg">
+    <nav className="bg-black p-4 shadow-lg ">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="Logo" width={90} height={90} />
+          <Image src="/logo.png" alt="Logo" width={120} height={120} />
           <h1 className="text-[#635985] text-xl font-bold">VERTEX STUDIOS</h1>
         </div>
 
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex text-xl space-x-6">
           <li>
-            <Link
-              href="/about"
+            <a
+              href="#about"
               className="text-[#635985] hover:text-[#443C68] transition"
             >
               About Us
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/services"
+            <a
+              href="#services"
               className="text-[#635985] hover:text-[#443C68] transition"
             >
               Services
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/contact"
+            <a
+              href="#workflow"
+              className="text-[#635985] hover:text-[#443C68] transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Workflow
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
               className="text-[#635985] hover:text-[#443C68] transition"
             >
               Contact Us
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -54,31 +62,40 @@ export default function Navbar() {
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center bg-[#18122B] py-4 space-y-4">
           <li>
-            <Link
-              href="/about"
+            <a
+              href="#about"
               className="text-[#635985] hover:text-[#443C68] transition"
               onClick={() => setIsOpen(false)}
             >
               About Us
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/services"
+            <a
+              href="#services"
               className="text-[#635985] hover:text-[#443C68] transition"
               onClick={() => setIsOpen(false)}
             >
               Services
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/contact"
+            <a
+              href="#workflow"
+              className="text-[#635985] hover:text-[#443C68] transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Workflow
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
               className="text-[#635985] hover:text-[#443C68] transition"
               onClick={() => setIsOpen(false)}
             >
               Contact Us
-            </Link>
+            </a>
           </li>
         </ul>
       )}

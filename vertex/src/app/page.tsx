@@ -8,21 +8,39 @@ import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
 
-
-const page = () => {
+const Page = () => {
   return (
     <div>
       <Navbar />
       <Hero />
-      <About />
-      <Services />
-      <Workflow />
-      <Testimonials />
-      <WhyChooseUs />
-      <Contact />
-      <Footer /> 
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="workflow">
+        <Workflow />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      <section id="whychooseus">
+        <WhyChooseUs />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
+      <Footer />
     </div>
   );
 };
 
-export default page;
+export default Page;

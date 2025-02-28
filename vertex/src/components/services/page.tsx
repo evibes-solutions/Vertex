@@ -1,5 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
 import Image from "next/image";
 
 export default function Services() {
@@ -48,9 +51,36 @@ export default function Services() {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + services.length) % services.length
+    );
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+    preventScrollOnSwipe: true,
+  });
+
   return (
-    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6">
-      <div className="text-center mb-12">
+    <section
+      id="services"
+      className="min-h-screen bg-white text-white py-12 px-6 flex flex-col items-center"
+      {...handlers}
+    >
+      <div className="text-center mb-8">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,49 +89,53 @@ export default function Services() {
         >
           Our Services
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="text-lg text-[#B4A5D4] mt-2"
-        >
-          We offer a wide range of professional video editing services, ensuring
-          each project meets the highest industry standards.
-        </motion.p>
       </div>
 
-    
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
-              transition: { duration: 0.3, ease: "easeInOut" },
-            }}
-            className="bg-[#393053] p-6 rounded-lg shadow-lg text-center flex flex-col"
-          >
-          
-            <div className="w-full aspect-[4/3] bg-gray-700 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={400}
-                height={300}
-                className="object-cover w-full h-full"
-              />
-            </div>
+      <div className="relative w-full max-w-7xl flex items-center justify-center overflow-hidden">
+        <div className="relative flex items-center justify-center space-x-0">
+          <AnimatePresence>
+            {[...services, ...services]
+              .slice(currentIndex, currentIndex + 3)
+              .map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }} // All images same size
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative w-[500px] h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border-0"
+                >
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={700}
+                    height={450}
+                    className="object-cover w-full h-3/4"
+                    onClick={nextSlide}
+                  />
+                  <div className="mt-2 ">
+                    <h3 className="text-xl font-semibold text-[#635985]">
+                      {service.title}
+                    </h3>
+                    <p className="text-lg text-gray-600">
+                      {service.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+          </AnimatePresence>
+        </div>
+      </div>
 
-          
-            <h2 className="text-2xl font-bold text-[#635985]">
-              {service.title}
-            </h2>
-            <p className="text-[#B4A5D4] mt-2">{service.description}</p>
-          </motion.div>
+      <div className="flex mt-6 space-x-2">
+        {services.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-[#635985] w-4" : "bg-gray-400"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          ></button>
         ))}
       </div>
     </section>
