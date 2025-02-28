@@ -11,13 +11,13 @@ export default function Hero() {
         muted
         playsInline
       >
-        <source src="/video.mp4" type="video/mp4" />
+        <source src="/video1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       <div className="relative text-center max-w-2xl px-6 p-10 rounded-lg">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4 text-black"
+          className="text-4xl md:text-6xl font-bold mb-4 text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -36,7 +36,7 @@ export default function Hero() {
             ))}
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl mb-6 text-black"
+          className="text-lg md:text-xl mb-6 text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
