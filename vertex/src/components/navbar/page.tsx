@@ -49,7 +49,6 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-black"
           onClick={() => setIsOpen(!isOpen)}
@@ -58,9 +57,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-black/80 backdrop-blur-lg py-4 space-y-4 absolute w-full left-0">
+        <ul className="md:hidden flex flex-col items-center backdrop-blur-lg py-4 space-y-4 absolute w-full left-0">
           <li>
             <a
               href="#about"

@@ -81,22 +81,27 @@ export default function Services() {
         className="min-h-screen py-12 px-6 flex flex-col items-center"
         {...handlers}
       >
+        {/* Title */}
         <div className="text-center mb-8">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-4xl md:text-5xl font-bold text-black"
+            className="text-3xl md:text-5xl font-bold text-black"
           >
             Our Services
           </motion.h1>
         </div>
 
+        {/* Carousel Container */}
         <div className="relative w-full max-w-7xl flex items-center justify-center overflow-hidden">
           <div className="relative flex items-center justify-center space-x-0">
             <AnimatePresence>
               {[...services, ...services]
-                .slice(currentIndex, currentIndex + 3)
+                .slice(
+                  currentIndex,
+                  currentIndex + (window.innerWidth < 768 ? 1 : 3)
+                ) // Show 1 on mobile, 3 on larger screens
                 .map((service, index) => (
                   <motion.div
                     key={index}
@@ -104,21 +109,23 @@ export default function Services() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-[500px] h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border border-gray-300"
+                    className="relative w-full md:w-[500px] h-[500px] md:h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border border-gray-300 mx-2"
                   >
+                    {/* Image */}
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={700}
                       height={450}
-                      className="object-cover w-full h-3/4"
+                      className="object-cover w-full h-3/4 rounded-lg"
                       onClick={nextSlide}
                     />
-                    <div className="mt-2">
-                      <h3 className="text-xl font-semibold text-black">
+                    {/* Text */}
+                    <div className="mt-2 px-4">
+                      <h3 className="text-lg md:text-xl font-semibold text-black">
                         {service.title}
                       </h3>
-                      <p className="text-lg text-gray-800">
+                      <p className="text-sm md:text-lg text-gray-800">
                         {service.description}
                       </p>
                     </div>
@@ -128,6 +135,7 @@ export default function Services() {
           </div>
         </div>
 
+        {/* Dots Navigation */}
         <div className="flex mt-6 space-x-2">
           {services.map((_, index) => (
             <button
@@ -139,6 +147,8 @@ export default function Services() {
             ></button>
           ))}
         </div>
+
+        
       </section>
     </div>
   );
