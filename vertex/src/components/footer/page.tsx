@@ -12,7 +12,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#18122B] text-white py-6">
       <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between">
-        {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,7 +24,6 @@ export default function Footer() {
           <p className="text-[#E0CFF2]">📩 vertex.studio.va@gmail.com</p>
         </motion.div>
 
-        {/* Follow Us (Social Icons) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +60,6 @@ export default function Footer() {
           </Link>
         </motion.div>
 
-        {/* Copyright */}
         <div className="text-[#B4A5D4] text-sm text-center md:text-right mt-4 md:mt-0">
           &copy; {new Date().getFullYear()} Vertex Studio. All Rights Reserved.
         </div>
