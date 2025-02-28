@@ -7,34 +7,36 @@ export default function WhyChooseUs() {
     {
       title: "High-Quality Editing",
       description: "We ensure professional-grade edits with cinematic quality.",
-      icon: <FaFilm className="text-[#B4A5D4] text-4xl" />,
+      icon: <FaFilm />,
     },
     {
       title: "Fast Turnaround Time",
       description: "Quick and efficient service without compromising quality.",
-      icon: <FaClock className="text-[#B4A5D4] text-4xl" />,
+      icon: <FaClock />,
     },
     {
       title: "Custom Solutions",
       description: "Tailored editing styles to fit your specific vision.",
-      icon: <FaCogs className="text-[#B4A5D4] text-4xl" />,
+      icon: <FaCogs />,
     },
     {
-      title: "Affordable & Competitive Pricing",
+      title: "Affordable Pricing",
       description: "Top-tier quality at budget-friendly rates.",
-      icon: <FaDollarSign className="text-[#B4A5D4] text-4xl" />,
+      icon: <FaDollarSign />,
     },
   ];
 
   return (
-    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6">
+    <section className="min-h-screen bg-[#18122B] text-white py-12 px-6 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 blur-3xl pointer-events-none"></div>
+
       <div className="max-w-5xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-[#635985]"
+          className="text-4xl md:text-5xl font-bold text-[#B4A5D4]"
         >
           Why Choose Us?
         </motion.h1>
@@ -44,25 +46,25 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-lg text-[#B4A5D4] mt-2"
+          className="text-lg text-[#E0CFF2] mt-2"
         >
           Our streamlined process ensures quality, speed, and satisfaction.
         </motion.p>
       </div>
 
-      <div className="max-w-4xl mx-auto mt-12 space-y-6">
+      <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
         {steps.map((step, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3, ease: "easeInOut" },
             }}
-            className="flex items-center space-x-6 p-6 bg-[#2A1F4A] rounded-lg shadow-lg"
+            className="flex items-center space-x-4 p-6 bg-[#2A1F4A] bg-opacity-75 border border-[#B4A5D4] rounded-lg shadow-lg backdrop-blur-md transition-transform"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -73,7 +75,8 @@ export default function WhyChooseUs() {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className="flex-shrink-0"
+              whileHover={{ rotate: 10 }}
+              className="text-[#B4A5D4] text-4xl"
             >
               {step.icon}
             </motion.div>
