@@ -26,12 +26,12 @@ const Page = () => {
         <Workflow />
       </section>
 
-      <section id="testimonials">
-        <Testimonials />
-      </section>
-
       <section id="whychooseus">
         <WhyChooseUs />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
       </section>
 
       <section id="contact">

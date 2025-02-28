@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 ">
+    <nav className="absolute top-0 left-0 w-full z-50 bg-transparent">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <Image src="/logoblack.png" alt="Logo" width={100} height={100} />
@@ -48,6 +48,8 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-black"
           onClick={() => setIsOpen(!isOpen)}
@@ -56,6 +58,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center bg-black/80 backdrop-blur-lg py-4 space-y-4 absolute w-full left-0">
           <li>

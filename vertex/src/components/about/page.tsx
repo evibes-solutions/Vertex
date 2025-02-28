@@ -27,7 +27,7 @@ export default function About() {
           muted
           playsInline
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="/about.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

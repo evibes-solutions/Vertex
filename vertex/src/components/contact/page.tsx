@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Contact() {
   return (
@@ -73,14 +72,17 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="hidden md:block">
-          <Image
-            src="/picture.jpg"
-            alt="Contact"
-            className="w-full h-auto rounded-lg shadow-lg object-cover"
-            width={500}
-            height={400}
-          />
+        <div className="relative w-full h-[400px] lg:h-[650px] lg:w-[550px]">
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/contact.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>

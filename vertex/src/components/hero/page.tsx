@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import Navbar from "../navbar/page";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+    <section className="relative h-screen flex items-center justify-end text-black overflow-hidden px-10">
+      <Navbar />
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -11,13 +13,13 @@ export default function Hero() {
         muted
         playsInline
       >
-        <source src="/video1.mp4" type="video/mp4" />
+        <source src="/video3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative text-center max-w-2xl px-6 p-10 rounded-lg">
+      <div className="relative text-right max-w-2xl p-10 rounded-lg">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4 text-white"
+          className="text-4xl md:text-6xl font-bold mb-4 text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -36,7 +38,7 @@ export default function Hero() {
             ))}
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl mb-6 text-white"
+          className="text-lg md:text-xl mb-6 text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
