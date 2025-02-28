@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
@@ -12,20 +15,44 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative text-center max-w-2xl px-6 bg-[#18122B]/70 p-10 rounded-lg">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#B4A5D4]">
-          Professional Video Editing Services
-        </h1>
-        <p className="text-lg md:text-xl mb-6 text-[#E0CFF2]">
+      <div className="relative text-center max-w-2xl px-6 p-10 rounded-lg">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-4 text-black"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {"Professional Video Editing Services"
+            .split("")
+            .map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.05, delay: index * 0.05 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+        </motion.h1>
+        <motion.p
+          className="text-lg md:text-xl mb-6 text-black"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           We help brands, businesses, and creators produce visually stunning,
           high-quality video content.
-        </p>
-        <a
+        </motion.p>
+        <motion.a
           href="/contact"
-          className="px-6 py-3 bg-[#393053] hover:bg-[#443C68] text-white rounded-lg text-lg font-medium transition"
+          className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg text-lg font-medium transition"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
         >
           Get Started
-        </a>
+        </motion.a>
       </div>
     </section>
   );

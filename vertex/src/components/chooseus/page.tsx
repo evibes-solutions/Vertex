@@ -7,36 +7,34 @@ export default function WhyChooseUs() {
     {
       title: "High-Quality Editing",
       description: "We ensure professional-grade edits with cinematic quality.",
-      icon: <FaFilm />,
+      icon: <FaFilm className="text-red-500" />,
     },
     {
       title: "Fast Turnaround Time",
       description: "Quick and efficient service without compromising quality.",
-      icon: <FaClock />,
+      icon: <FaClock className="text-green-500" />,
     },
     {
       title: "Custom Solutions",
       description: "Tailored editing styles to fit your specific vision.",
-      icon: <FaCogs />,
+      icon: <FaCogs className="text-blue-500" />,
     },
     {
       title: "Affordable Pricing",
       description: "Top-tier quality at budget-friendly rates.",
-      icon: <FaDollarSign />,
+      icon: <FaDollarSign className="text-yellow-500" />,
     },
   ];
 
   return (
-    <section className="min-h-screen bg-white text-white py-12 px-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 blur-3xl pointer-events-none"></div>
-
+    <section className="min-h-screen bg-white text-gray-900 py-12 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-[#B4A5D4]"
+          className="text-4xl md:text-5xl font-bold text-black"
         >
           Why Choose Us?
         </motion.h1>
@@ -46,7 +44,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-lg text-[#E0CFF2] mt-2"
+          className="text-lg text-gray-700 mt-2"
         >
           Our streamlined process ensures quality, speed, and satisfaction.
         </motion.p>
@@ -64,7 +62,7 @@ export default function WhyChooseUs() {
               scale: 1.05,
               transition: { duration: 0.3, ease: "easeInOut" },
             }}
-            className="flex items-center space-x-4 p-6 bg-[#2A1F4A] bg-opacity-75 border border-[#B4A5D4] rounded-lg shadow-lg backdrop-blur-md transition-transform"
+            className="flex items-center space-x-4 p-6 bg-gray-100 border border-gray-300 rounded-lg shadow-md transition-transform"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -76,16 +74,14 @@ export default function WhyChooseUs() {
               }}
               viewport={{ once: true }}
               whileHover={{ rotate: 10 }}
-              className="text-[#B4A5D4] text-4xl"
+              className="text-4xl"
             >
               {step.icon}
             </motion.div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#E0CFF2]">
-                {step.title}
-              </h2>
-              <p className="text-[#B4A5D4] mt-1">{step.description}</p>
+              <h2 className="text-2xl font-bold text-gray-900">{step.title}</h2>
+              <p className="text-gray-700 mt-1">{step.description}</p>
             </div>
           </motion.div>
         ))}

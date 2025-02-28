@@ -8,35 +8,33 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black p-4 shadow-lg ">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 ">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="Logo" width={120} height={120} />
-          <h1 className="text-[#635985] text-xl font-bold">VERTEX STUDIOS</h1>
+          <Image src="/logoblack.png" alt="Logo" width={100} height={100} />
         </div>
 
-        <ul className="hidden md:flex text-xl space-x-6">
-          <li>
-            <a
-              href="#about"
-              className="text-[#635985] hover:text-[#443C68] transition"
-            >
-              About Us
-            </a>
-          </li>
+        <ul className="hidden md:flex text-lg space-x-6">
           <li>
             <a
               href="#services"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black font-bold hover:text-gray-300 transition"
             >
               Services
             </a>
           </li>
           <li>
             <a
+              href="#about"
+              className="text-black font-bold hover:text-gray-300 transition"
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
               href="#workflow"
-              className="text-[#635985] hover:text-[#443C68] transition"
-              onClick={() => setIsOpen(false)}
+              className="text-black font-bold hover:text-gray-300 transition"
             >
               Workflow
             </a>
@@ -44,15 +42,14 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black font-bold hover:text-gray-300 transition"
             >
               Contact Us
             </a>
           </li>
         </ul>
-
         <button
-          className="md:hidden text-[#635985]"
+          className="md:hidden text-black"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={30} /> : <Menu size={30} />}
@@ -60,11 +57,11 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-[#18122B] py-4 space-y-4">
+        <ul className="md:hidden flex flex-col items-center bg-black/80 backdrop-blur-lg py-4 space-y-4 absolute w-full left-0">
           <li>
             <a
               href="#about"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black hover:text-gray-300 transition"
               onClick={() => setIsOpen(false)}
             >
               About Us
@@ -73,7 +70,7 @@ export default function Navbar() {
           <li>
             <a
               href="#services"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black hover:text-gray-300 transition"
               onClick={() => setIsOpen(false)}
             >
               Services
@@ -82,7 +79,7 @@ export default function Navbar() {
           <li>
             <a
               href="#workflow"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black hover:text-gray-300 transition"
               onClick={() => setIsOpen(false)}
             >
               Workflow
@@ -91,7 +88,7 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className="text-[#635985] hover:text-[#443C68] transition"
+              className="text-black hover:text-gray-300 transition"
               onClick={() => setIsOpen(false)}
             >
               Contact Us

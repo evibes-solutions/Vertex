@@ -75,69 +75,71 @@ export default function Services() {
   });
 
   return (
-    <section
-      id="services"
-      className="min-h-screen bg-white text-white py-12 px-6 flex flex-col items-center"
-      {...handlers}
-    >
-      <div className="text-center mb-8">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-4xl md:text-5xl font-bold text-[#635985]"
-        >
-          Our Services
-        </motion.h1>
-      </div>
-
-      <div className="relative w-full max-w-7xl flex items-center justify-center overflow-hidden">
-        <div className="relative flex items-center justify-center space-x-0">
-          <AnimatePresence>
-            {[...services, ...services]
-              .slice(currentIndex, currentIndex + 3)
-              .map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }} // All images same size
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative w-[500px] h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border-0"
-                >
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={700}
-                    height={450}
-                    className="object-cover w-full h-3/4"
-                    onClick={nextSlide}
-                  />
-                  <div className="mt-2 ">
-                    <h3 className="text-xl font-semibold text-[#635985]">
-                      {service.title}
-                    </h3>
-                    <p className="text-lg text-gray-600">
-                      {service.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-          </AnimatePresence>
+    <div className="bg-white">
+      <section
+        id="services"
+        className="min-h-screen py-12 px-6 flex flex-col items-center"
+        {...handlers}
+      >
+        <div className="text-center mb-8">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-4xl md:text-5xl font-bold text-black"
+          >
+            Our Services
+          </motion.h1>
         </div>
-      </div>
 
-      <div className="flex mt-6 space-x-2">
-        {services.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-[#635985] w-4" : "bg-gray-400"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          ></button>
-        ))}
-      </div>
-    </section>
+        <div className="relative w-full max-w-7xl flex items-center justify-center overflow-hidden">
+          <div className="relative flex items-center justify-center space-x-0">
+            <AnimatePresence>
+              {[...services, ...services]
+                .slice(currentIndex, currentIndex + 3)
+                .map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative w-[500px] h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border border-gray-300"
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={700}
+                      height={450}
+                      className="object-cover w-full h-3/4"
+                      onClick={nextSlide}
+                    />
+                    <div className="mt-2">
+                      <h3 className="text-xl font-semibold text-black">
+                        {service.title}
+                      </h3>
+                      <p className="text-lg text-gray-800">
+                        {service.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="flex mt-6 space-x-2">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-black w-4" : "bg-gray-500"
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            ></button>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

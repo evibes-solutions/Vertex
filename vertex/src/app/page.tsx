@@ -14,12 +14,12 @@ const Page = () => {
       <Navbar />
       <Hero />
 
-      <section id="about">
-        <About />
-      </section>
-
       <section id="services">
         <Services />
+      </section>
+
+      <section id="about">
+        <About />
       </section>
 
       <section id="workflow">

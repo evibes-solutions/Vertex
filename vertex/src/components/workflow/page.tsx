@@ -8,37 +8,52 @@ export default function Workflow() {
       title: "Consultation & Project Briefing",
       description:
         "We discuss your project details, requirements, and expectations.",
+      image: "/step1.jpg",
     },
     {
       title: "Reviewing Raw Footage",
       description:
         "Our team analyzes and organizes your footage to plan the best editing approach.",
+      image: "/step2.jpg",
     },
     {
       title: "Editing & Enhancement",
       description:
         "We apply seamless cuts, transitions, color correction, and effects to enhance the video.",
+      image: "/step3.jpg",
     },
     {
       title: "Client Feedback & Revisions",
       description:
         "You review the edited version, and we make adjustments as per your feedback.",
+      image: "/step4.jpg",
     },
     {
       title: "Final Delivery",
       description:
         "The final high-resolution video is delivered in your preferred format, ready for use.",
+      image: "/step5.jpg",
     },
   ];
 
   return (
-    <section className="min-h-screen bg-white text-white py-12 px-6 flex flex-col lg:flex-row items-center">
-      <div className="lg:w-1/2 w-full">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen bg-white text-gray-900 py-12 px-6"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="max-w-4xl mx-auto"
+      >
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-4xl md:text-5xl font-bold text-[#635985] text-left"
+          className="text-4xl md:text-5xl font-bold text-black text-center"
         >
           Our Workflow
         </motion.h1>
@@ -46,79 +61,72 @@ export default function Workflow() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="text-lg text-[#B4A5D4] mt-2 text-left"
+          className="text-lg text-gray-700 mt-2 text-center"
         >
           We follow a structured workflow to ensure efficiency and high-quality
           results.
         </motion.p>
 
-        <div className="space-y-8 mt-8">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+          className="space-y-8 mt-8"
+        >
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.8,
-                ease: "easeOut",
-                delay: index * 0.2,
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
               }}
+              className="flex items-center bg-gray-200 p-6 rounded-lg shadow-md border border-gray-200"
               whileHover={{
                 scale: 1.03,
-                backgroundColor: "#443C68",
+                backgroundColor: "#f3f4f6",
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
-              className="flex items-start bg-[#2A1F4A] p-6 rounded-lg transition-all shadow-md"
             >
               <motion.div
-                className="w-12 h-12 flex items-center justify-center bg-[#635985] text-white font-bold text-lg rounded-full mr-4 transition-all"
+                className="w-12 h-12 flex items-center justify-center bg-black text-white font-bold text-lg rounded-full mr-4"
                 whileHover={{
                   scale: 1.15,
-                  backgroundColor: "#B4A5D4",
+                  backgroundColor: "#2563EB",
                   transition: { duration: 0.3, ease: "easeInOut" },
                 }}
               >
                 {index + 1}
               </motion.div>
 
-              <div>
-                <h2 className="text-2xl font-bold text-[#B4A5D4]">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-gray-900">
                   {step.title}
                 </h2>
-                <p className="text-[#E0CFF2] mt-2">{step.description}</p>
+                <p className="text-gray-700 mt-2">{step.description}</p>
+              </div>
+
+              <div className="w-24 h-24 md:w-32 md:h-32 ml-4 flex-shrink-0">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full rounded-lg shadow-md"
+                />
               </div>
             </motion.div>
           ))}
-        </div>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-        className="lg:w-1/2 w-full flex justify-center mt-12 lg:mt-0"
-      >
-        <Image
-          src="/pic.png"
-          alt="Workflow Process"
-          width={500}
-          height={500}
-          className="rounded-lg shadow-lg"
-        />
-
-        {/* <div className="flex justify-center items-center h-screen bg-gray-900">
-          <video
-            className="w-full max-w-4xl rounded-lg shadow-lg"
-            controls
-            autoPlay
-            loop
-            muted
-          >
-            <source src="/hero.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div> */}
+        </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
