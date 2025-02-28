@@ -52,6 +52,18 @@ export default function Services() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(1); // Default to 1 for mobile
+
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      setSlidesToShow(window.innerWidth < 768 ? 1 : 3);
+    };
+
+    updateSlidesToShow(); // Set initial value
+
+    window.addEventListener("resize", updateSlidesToShow);
+    return () => window.removeEventListener("resize", updateSlidesToShow);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
@@ -98,10 +110,7 @@ export default function Services() {
           <div className="relative flex items-center justify-center space-x-0">
             <AnimatePresence>
               {[...services, ...services]
-                .slice(
-                  currentIndex,
-                  currentIndex + (window.innerWidth < 768 ? 1 : 3)
-                ) // Show 1 on mobile, 3 on larger screens
+                .slice(currentIndex, currentIndex + slidesToShow)
                 .map((service, index) => (
                   <motion.div
                     key={index}
@@ -147,8 +156,6 @@ export default function Services() {
             ></button>
           ))}
         </div>
-
-        
       </section>
     </div>
   );
