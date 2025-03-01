@@ -52,21 +52,23 @@ export default function Services() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(1); // Default to 1 for mobile
+  const [slidesToShow, setSlidesToShow] = useState(1);
 
   useEffect(() => {
     const updateSlidesToShow = () => {
       setSlidesToShow(window.innerWidth < 768 ? 1 : 3);
     };
 
-    updateSlidesToShow(); // Set initial value
+    updateSlidesToShow();
 
     window.addEventListener("resize", updateSlidesToShow);
     return () => window.removeEventListener("resize", updateSlidesToShow);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -93,7 +95,6 @@ export default function Services() {
         className="min-h-screen py-12 px-6 flex flex-col items-center"
         {...handlers}
       >
-        {/* Title */}
         <div className="text-center mb-8">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -105,7 +106,6 @@ export default function Services() {
           </motion.h1>
         </div>
 
-        {/* Carousel Container */}
         <div className="relative w-full max-w-7xl flex items-center justify-center overflow-hidden">
           <div className="relative flex items-center justify-center space-x-0">
             <AnimatePresence>
@@ -119,17 +119,18 @@ export default function Services() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.5 }}
                     className="relative w-full md:w-[500px] h-[500px] md:h-[600px] rounded-lg overflow-hidden shadow-lg bg-white p-4 text-center flex flex-col items-center justify-between border border-gray-300 mx-2"
+                    onClick={() => {
+                      if (index === 0) prevSlide();
+                      if (index === slidesToShow - 1) nextSlide();
+                    }}
                   >
-                    {/* Image */}
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={700}
                       height={450}
                       className="object-cover w-full h-3/4 rounded-lg"
-                      onClick={nextSlide}
                     />
-                    {/* Text */}
                     <div className="mt-2 px-4">
                       <h3 className="text-lg md:text-xl font-semibold text-black">
                         {service.title}
@@ -144,7 +145,6 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Dots Navigation */}
         <div className="flex mt-6 space-x-2">
           {services.map((_, index) => (
             <button
