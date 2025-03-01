@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-black text-white py-8">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div className="flex justify-center md:justify-start">
           <Image
@@ -29,7 +29,7 @@ export default function Footer() {
           className="text-center md:text-left"
         >
           <h2 className="text-xl font-bold text-white mb-2">Contact Us</h2>
-          <p className="text-gray-300">📞 (+92 300 1234567)</p>
+          <p className="text-gray-300">📞 +92 300 1234567</p>
           <p className="text-gray-300">📍 Vertex Studio, Lahore, Pakistan</p>
           <p className="text-gray-300">📩 vertex.studio.va@gmail.com</p>
         </motion.div>
