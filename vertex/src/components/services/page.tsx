@@ -16,15 +16,6 @@ const pageVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
-  },
-};
-
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9, y: 10 },
   visible: (index: number) => ({
@@ -46,43 +37,43 @@ export default function Services() {
       title: "Professional Video Editing",
       description:
         "Crisp, smooth, and engaging edits that enhance the flow and impact of your footage.",
-      icon: () => <FaFilm size={50} className="text-red-500" />,
+      icon: () => <FaFilm size={50} />,
     },
     {
       title: "Color Grading & Enhancement",
       description:
         "We apply cinematic color grading to give your videos a polished, professional look.",
-      icon: () => <FaPalette size={50} className="text-green-500" />,
+      icon: () => <FaPalette size={50} />,
     },
     {
       title: "Audio Editing & Sound Design",
       description:
         "Clear and immersive sound with noise reduction, background music, and professional sound effects.",
-      icon: () => <FaMusic size={50} className="text-blue-500" />,
+      icon: () => <FaMusic size={50} />,
     },
     {
       title: "Wedding & Event Editing",
       description:
         "Beautifully edited wedding and event videos that capture emotions and special moments.",
-      icon: () => <FaHeart size={50} className="text-pink-500" />,
+      icon: () => <FaHeart size={50} />,
     },
     {
       title: "Corporate & Commercial Video Editing",
       description:
         "Professional corporate videos, advertisements, and brand promos with a high production value.",
-      icon: () => <FaBuilding size={50} className="text-yellow-500" />,
+      icon: () => <FaBuilding size={50} />,
     },
     {
       title: "Social Media Content Editing",
       description:
         "Short-form, high-impact videos optimized for YouTube, Instagram, TikTok, and other platforms.",
-      icon: () => <FaShareSquare size={50} className="text-purple-500" />,
+      icon: () => <FaShareSquare size={50} />,
     },
     {
       title: "Documentary & Short Film Editing",
       description:
         "Editing that enhances storytelling, pacing, and overall visual appeal for filmmakers and storytellers.",
-      icon: () => <FaVideo size={50} className="text-orange-500" />,
+      icon: () => <FaVideo size={50} />,
     },
   ];
 
@@ -101,21 +92,20 @@ export default function Services() {
       >
         <div className="text-center mb-8">
           <motion.h1
-            suppressHydrationWarning
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false }}
-            className="text-3xl md:text-5xl font-bold"
+            className="text-3xl md:text-5xl font-bold text-black text-center"
           >
             Our Services
           </motion.h1>
           <motion.p
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: false }}
-            className="text-lg text-gray-600 mt-3 max-w-2xl mx-auto"
+            className="text-md md:text-lg text-gray-700 mt-2 text-center max-w-lg"
           >
             High-quality, professional video editing services tailored to your
             needs.

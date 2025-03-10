@@ -7,16 +7,18 @@ export default function Hero() {
   return (
     <section className="relative h-screen bg-white flex items-center justify-end text-black overflow-hidden px-10">
       <Navbar />
-      <div className="absolute left-0 top-0 h-full w-1/2">
+      <div className="absolute left-0 top-0 h-full w-1/2 ">
         <Image
           src="/camera.png"
           alt="Background"
           fill
+          sizes="50vw"
           className="object-cover"
           quality={100}
           priority
         />
       </div>
+
       <div className="relative max-w-2xl p-10 text-right">
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-4 text-black"
@@ -32,8 +34,8 @@ export default function Hero() {
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                viewport={{ once: false }}
                 transition={{ duration: 0.05, delay: index * 0.05 }}
+                viewport={{ once: false }}
               >
                 {char}
               </motion.span>

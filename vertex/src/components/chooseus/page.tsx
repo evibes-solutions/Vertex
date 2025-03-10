@@ -7,22 +7,22 @@ export default function WhyChooseUs() {
     {
       title: "High-Quality Editing",
       description: "We ensure professional-grade edits with cinematic quality.",
-      icon: <FaFilm className="text-red-500" />,
+      icon: <FaFilm />,
     },
     {
       title: "Fast Turnaround Time",
       description: "Quick and efficient service without compromising quality.",
-      icon: <FaClock className="text-green-500" />,
+      icon: <FaClock />,
     },
     {
       title: "Custom Solutions",
       description: "Tailored editing styles to fit your specific vision.",
-      icon: <FaCogs className="text-blue-500" />,
+      icon: <FaCogs />,
     },
     {
       title: "Affordable Pricing",
       description: "Top-tier quality at budget-friendly rates.",
-      icon: <FaDollarSign className="text-yellow-500" />,
+      icon: <FaDollarSign />,
     },
   ];
 

@@ -14,23 +14,23 @@ export default function Statistics() {
   const stats = [
     {
       title: "Completed Projects",
-      value: 107,
-      icon: <FaCheckCircle size={50} className="text-blue-500" />,
+      value: 200,
+      icon: <FaCheckCircle size={50} />,
     },
     {
       title: "Happy Clients",
-      value: 52,
-      icon: <FaSmile size={50} className="text-green-500" />,
+      value: 120,
+      icon: <FaSmile size={50} />,
     },
     {
       title: "Services Provided",
-      value: 71,
-      icon: <FaCogs size={50} className="text-purple-500" />,
+      value: 130,
+      icon: <FaCogs size={50} />,
     },
     {
       title: "Winning Awards",
-      value: 19,
-      icon: <FaTrophy size={50} className="text-yellow-500" />,
+      value: 50,
+      icon: <FaTrophy size={50} />,
     },
   ];
 
@@ -44,7 +44,7 @@ export default function Statistics() {
           viewport={{ once: false }}
           className="text-3xl md:text-5xl font-bold"
         >
-          We Have Completed <span className="text-blue-600">100+</span> Projects{" "}
+          We Have Completed <span className="text-blue-600">500+</span> Projects{" "}
           <span className="text-blue-600">Successfully</span>
         </motion.h1>
       </section>
@@ -82,7 +82,7 @@ function AnimatedCounter({ finalValue }: { finalValue: number }) {
 
   useEffect(() => {
     if (isInView) {
-      count.set(0); 
+      count.set(0);
       const controls = animate(count, finalValue, {
         duration: 2,
         ease: "easeOut",

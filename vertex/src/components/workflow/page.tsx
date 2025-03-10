@@ -11,35 +11,35 @@ import {
 export default function Workflow() {
   const steps = [
     {
-      icon: <FaClipboardList className="text-white text-4xl" />,
+      icon: <FaClipboardList className="text-black text-5xl" />,
       title: "Consultation & Project Briefing",
       description:
         "We discuss your project details, requirements, and expectations.",
       bgColor: "bg-gradient-to-r from-blue-500 to-blue-700",
     },
     {
-      icon: <FaFilm className="text-white text-4xl" />,
+      icon: <FaFilm className="text-black text-5xl" />,
       title: "Reviewing Raw Footage",
       description:
         "Our team analyzes and organizes your footage to plan the best editing approach.",
       bgColor: "bg-gradient-to-r from-red-500 to-red-700",
     },
     {
-      icon: <FaMagic className="text-white text-4xl" />,
+      icon: <FaMagic className="text-black text-5xl" />,
       title: "Editing & Enhancement",
       description:
         "We apply seamless cuts, transitions, color correction, and effects to enhance the video.",
       bgColor: "bg-gradient-to-r from-purple-500 to-purple-700",
     },
     {
-      icon: <FaCommentDots className="text-white text-4xl" />,
+      icon: <FaCommentDots className="text-black text-5xl" />,
       title: "Client Feedback & Revisions",
       description:
         "You review the edited version, and we make adjustments as per your feedback.",
       bgColor: "bg-gradient-to-r from-green-500 to-green-700",
     },
     {
-      icon: <FaCheckCircle className="text-white text-4xl" />,
+      icon: <FaCheckCircle className="text-black text-5xl" />,
       title: "Final Delivery",
       description:
         "The final high-resolution video is delivered in your preferred format, ready for use.",
@@ -98,7 +98,7 @@ export default function Workflow() {
               }}
               viewport={{ once: false }}
               whileHover={{ rotate: 10 }}
-              className={`w-16 h-16 flex items-center justify-center ${step.bgColor} rounded-full shadow-lg mr-5`}
+              className={`w-16 h-16 flex items-center justify-center  rounded-full  mr-5`}
             >
               {step.icon}
             </motion.div>

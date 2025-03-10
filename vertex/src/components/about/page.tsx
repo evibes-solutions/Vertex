@@ -5,19 +5,19 @@ import { FaVideo, FaMagic, FaPalette, FaMusic } from "react-icons/fa";
 export default function About() {
   const features = [
     {
-      icon: <FaVideo className="text-blue-500 text-3xl" />,
+      icon: <FaVideo className=" text-3xl" />,
       text: "Cinematic Video Editing",
     },
     {
-      icon: <FaMagic className="text-purple-500 text-3xl" />,
+      icon: <FaMagic className=" text-3xl" />,
       text: "Smooth Transitions & Effects",
     },
     {
-      icon: <FaPalette className="text-orange-500 text-3xl" />,
+      icon: <FaPalette className=" text-3xl" />,
       text: "Advanced Color Grading",
     },
     {
-      icon: <FaMusic className="text-green-500 text-3xl" />,
+      icon: <FaMusic className=" text-3xl" />,
       text: "High-Quality Sound Design",
     },
   ];
