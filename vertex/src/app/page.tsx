@@ -7,6 +7,7 @@ import Testimonials from "@/components/testimonals/page";
 import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
+import Statistics from "@/components/statistics/page";
 
 const Page = () => {
   return (
@@ -26,12 +27,16 @@ const Page = () => {
         <Workflow />
       </section>
 
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
       <section id="whychooseus">
         <WhyChooseUs />
       </section>
 
-      <section id="testimonials">
-        <Testimonials />
+      <section id="stats">
+        <Statistics />
       </section>
 
       <section id="contact">
