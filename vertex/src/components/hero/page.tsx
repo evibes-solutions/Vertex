@@ -9,7 +9,7 @@ export default function Hero() {
       <Navbar />
       <div className="absolute left-0 top-0 h-full w-1/2 ">
         <Image
-          src="/camera.png"
+          src="/background.png"
           alt="Background"
           fill
           sizes="50vw"
