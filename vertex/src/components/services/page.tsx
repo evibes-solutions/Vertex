@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import {
   FaFilm,
-  FaPalette,
   FaMusic,
   FaHeart,
   FaBuilding,
@@ -39,12 +38,7 @@ export default function Services() {
         "Crisp, smooth, and engaging edits that enhance the flow and impact of your footage.",
       icon: () => <FaFilm size={50} />,
     },
-    {
-      title: "Color Grading & Enhancement",
-      description:
-        "We apply cinematic color grading to give your videos a polished, professional look.",
-      icon: () => <FaPalette size={50} />,
-    },
+
     {
       title: "Audio Editing & Sound Design",
       description:
