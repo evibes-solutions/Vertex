@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-4xl md:text-5xl font-bold text-black text-center md:text-left"
         >
           Why Choose Us?
@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-lg text-gray-700 mt-2 text-center md:text-left"
         >
           Our streamlined process ensures quality, speed, and satisfaction.
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.3, ease: "easeInOut" },
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
                   delay: index * 0.2,
                   ease: "easeOut",
                 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 whileHover={{ rotate: 10 }}
                 className="text-4xl"
               >

@@ -1,7 +1,13 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useInView,
+} from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 import { FaCheckCircle, FaSmile, FaCogs, FaTrophy } from "react-icons/fa";
 
 export default function Statistics() {
@@ -35,7 +41,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }} // Ensures animation happens every time it's in view
+          viewport={{ once: false }}
           className="text-3xl md:text-5xl font-bold"
         >
           We Have Completed <span className="text-blue-600">100+</span> Projects{" "}
@@ -50,7 +56,7 @@ export default function Statistics() {
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: false }} // Allows animations to repeat on navigation
+            viewport={{ once: false }}
             className="relative bg-white bg-opacity-80 border border-gray-300 shadow-lg backdrop-blur-md rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
           >
             <div className="mb-4 w-16 h-16 flex items-center justify-center bg-gray-200 rounded-full shadow-lg">
@@ -71,31 +77,30 @@ function AnimatedCounter({ finalValue }: { finalValue: number }) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   useEffect(() => {
-    const controls = animate(count, finalValue, {
-      duration: 2,
-      ease: "easeOut",
-    });
+    if (isInView) {
+      count.set(0); 
+      const controls = animate(count, finalValue, {
+        duration: 2,
+        ease: "easeOut",
+      });
 
-    const unsubscribe = rounded.on("change", (latest) =>
-      setDisplayValue(latest)
-    );
+      const unsubscribe = rounded.on("change", (latest) =>
+        setDisplayValue(latest)
+      );
 
-    return () => {
-      controls.stop();
-      unsubscribe();
-    };
-  }, [finalValue, count, rounded]);
+      return () => {
+        controls.stop();
+        unsubscribe();
+      };
+    }
+  }, [isInView, finalValue, count, rounded]);
 
   return (
-    <motion.h2
-      whileInView={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: false }} // Repeats every time it's in view
-      className="text-4xl font-bold text-gray-900"
-    >
+    <motion.h2 ref={ref} className="text-4xl font-bold text-gray-900">
       {displayValue}
     </motion.h2>
   );

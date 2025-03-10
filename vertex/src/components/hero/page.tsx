@@ -32,6 +32,7 @@ export default function Hero() {
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.05, delay: index * 0.05 }}
               >
                 {char}
