@@ -5,9 +5,11 @@ import Navbar from "../navbar/page";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen bg-white flex items-center justify-end text-black overflow-hidden px-10">
+    <section className="relative h-screen bg-white flex flex-col lg:flex-row items-center justify-end text-black overflow-hidden px-5 lg:px-10">
       <Navbar />
-      <div className="absolute left-0 top-0 h-full w-1/2 ">
+
+      {/* Image Div (Hidden on Mobile) */}
+      <div className="hidden lg:block absolute left-0 top-0 h-full w-1/2">
         <Image
           src="/background.PNG"
           alt="Background"
@@ -19,9 +21,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-2xl p-10 text-right">
+      {/* Text Div */}
+      <div className="relative max-w-2xl p-5 text-center flex flex-col items-center justify-center h-full">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4 text-black"
+          className="text-3xl md:text-6xl font-bold mb-4 text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
