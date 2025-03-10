@@ -9,11 +9,13 @@ export default function Hero() {
       <Navbar />
       <div className="absolute left-0 top-0 h-full w-1/2 ">
         <Image
-          src="/background.png"
+          src="/background.PNG"
           alt="Background"
-          width={600}
-          height={300}
+          fill
+          sizes="50vw"
           className="object-cover"
+          quality={100}
+          priority
         />
       </div>
 
