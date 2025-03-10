@@ -11,11 +11,9 @@ export default function Hero() {
         <Image
           src="/background.png"
           alt="Background"
-          fill
-          sizes="50vw"
+          width={600}
+          height={300}
           className="object-cover"
-          quality={100}
-          priority
         />
       </div>
 
