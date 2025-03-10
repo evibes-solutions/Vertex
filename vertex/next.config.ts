@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  images: {
+    unoptimized: false, // Make sure this is false for optimized images
+    domains: [], // No need to add anything for images in the public folder
+  },
 };
 
 export default nextConfig;
+  
