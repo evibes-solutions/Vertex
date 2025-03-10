@@ -1,3 +1,6 @@
+"use client";
+import { FaVideo, FaMagic, FaPalette, FaMusic } from "react-icons/fa";
+
 export default function About() {
   return (
     <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between bg-white text-black px-6">
@@ -13,15 +16,38 @@ export default function About() {
           media content, or high-end commercial editing, our expert team ensures
           every project is polished to perfection.
         </p>
-        <p className="text-lg md:text-xl text-black leading-relaxed mt-4">
-          We focus on seamless storytelling, smooth transitions, advanced color
-          grading, motion graphics, and high-quality sound design, delivering
-          professional results tailored to your vision.
-        </p>
+
+        <div className="mt-6 space-y-4">
+          <div className="flex items-center space-x-3">
+            <FaVideo className="text-blue-500 text-3xl" />
+            <p className="text-lg md:text-xl text-black">
+              Cinematic Video Editing
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <FaMagic className="text-purple-500 text-3xl" />
+            <p className="text-lg md:text-xl text-black">
+              Smooth Transitions & Effects
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <FaPalette className="text-orange-500 text-3xl" />
+            <p className="text-lg md:text-xl text-black">
+              Advanced Color Grading
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <FaMusic className="text-green-500 text-3xl" />
+            <p className="text-lg md:text-xl text-black">
+              High-Quality Sound Design
+            </p>
+          </div>
+        </div>
       </div>
+
       <div className="relative w-full lg:w-1/2 h-[400px] lg:h-[500px]">
         <video
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-lg shadow-xl"
           autoPlay
           loop
           muted

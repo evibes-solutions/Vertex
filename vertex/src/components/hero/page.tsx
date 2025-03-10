@@ -1,23 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Navbar from "../navbar/page";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-end text-black overflow-hidden px-10">
+    <section className="relative h-screen bg-white flex items-center justify-end text-black overflow-hidden px-10">
       <Navbar />
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/video3.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
 
-      <div className="relative text-right max-w-2xl p-10 rounded-lg">
+      <div className="absolute left-0 top-0 h-full w-1/2">
+        <Image
+          src="/camera.png"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
+      </div>
+
+      <div className="relative max-w-2xl p-10 text-right">
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-4 text-black"
           initial={{ opacity: 0 }}
@@ -48,7 +50,7 @@ export default function Hero() {
         </motion.p>
         <motion.a
           href="/contact"
-          className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg text-lg font-medium transition"
+          className="px-6 py-3 bg-black hover:bg-gray-900 text-white rounded-lg text-lg font-medium transition"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
