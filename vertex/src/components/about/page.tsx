@@ -29,14 +29,14 @@ export default function About() {
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
       >
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-black mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           About Vertex Studio
         </motion.h1>
@@ -63,12 +63,12 @@ export default function About() {
               className="flex items-center space-x-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true }}
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.3, ease: "easeInOut" },

@@ -23,6 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          viewport={{ once: false }}
         >
           {"Professional Video Editing Services"
             .split("")
@@ -42,6 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: false }}
         >
           We help brands, businesses, and creators produce visually stunning,
           high-quality video content.
@@ -52,6 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: false }}
         >
           Get Started
         </motion.a>

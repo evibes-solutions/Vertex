@@ -11,6 +11,21 @@ import {
   FaVideo,
 } from "react-icons/fa";
 
+// Motion Variants
+const pageVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: (index: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { delay: index * 0.1, duration: 0.5 },
+  }),
+};
+
 export default function Services() {
   const services = [
     {
@@ -58,7 +73,14 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-white text-black">
+    <motion.div
+      className="bg-white text-black"
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={pageVariants}
+      viewport={{ once: false }}
+    >
       <section
         id="services"
         className="min-h-screen py-12 px-6 flex flex-col items-center"
@@ -66,23 +88,30 @@ export default function Services() {
         <div className="text-center mb-8">
           <motion.h1
             suppressHydrationWarning
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={pageVariants}
             className="text-3xl md:text-5xl font-bold"
           >
             Our Services
           </motion.h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl"
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          viewport={{ once: false }}
+        >
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              custom={index}
+              variants={cardVariants}
+              viewport={{ once: false }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3, ease: "easeOut" },
+              }}
               className="relative w-full h-[300px] bg-gray-100 border border-gray-300 shadow-lg rounded-lg overflow-hidden text-center flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out hover:bg-black hover:text-white"
             >
               <div className="mb-4 p-4 bg-gray-200 rounded-full flex items-center justify-center">
@@ -92,8 +121,8 @@ export default function Services() {
               <p className="text-sm">{service.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 }

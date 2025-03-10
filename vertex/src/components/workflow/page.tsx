@@ -53,7 +53,7 @@ export default function Workflow() {
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="text-3xl md:text-5xl font-bold text-black text-center"
       >
         Our Workflow
@@ -63,7 +63,7 @@ export default function Workflow() {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="text-md md:text-lg text-gray-700 mt-2 text-center max-w-lg"
       >
         We follow a structured workflow to ensure efficiency and high-quality
@@ -81,7 +81,7 @@ export default function Workflow() {
               delay: index * 0.2,
               ease: "easeOut",
             }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3, ease: "easeInOut" },
@@ -96,7 +96,7 @@ export default function Workflow() {
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               whileHover={{ rotate: 10 }}
               className={`w-16 h-16 flex items-center justify-center ${step.bgColor} rounded-full shadow-lg mr-5`}
             >
