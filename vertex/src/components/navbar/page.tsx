@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
           className="md:hidden text-black absolute right-6"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={30} /> : <Menu size={30} />}
+          <Menu size={30} />
         </button>
       </div>
 
