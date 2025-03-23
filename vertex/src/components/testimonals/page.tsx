@@ -14,7 +14,7 @@ export default function Testimonials() {
     {
       quote:
         "Amazing editing skills! The transitions and effects made our video look like a Hollywood production.",
-      name: "Michael Brown",
+      name: "Emma Davis",
       image: "/client2.jpg",
     },
     {
@@ -32,7 +32,7 @@ export default function Testimonials() {
     {
       quote:
         "Fantastic service and excellent communication. The best video editing company we have worked with!",
-      name: "Emma Davis",
+      name: "Michael Brown",
       image: "/client5.jpg",
     },
   ];

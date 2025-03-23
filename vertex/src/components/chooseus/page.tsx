@@ -6,104 +6,83 @@ export default function WhyChooseUs() {
   const steps = [
     {
       title: "High-Quality Editing",
-      description: "We ensure professional-grade edits with cinematic quality.",
+      description: "Professional-grade edits with cinematic quality.",
       icon: <FaFilm />,
     },
     {
       title: "Fast Turnaround Time",
-      description: "Quick and efficient service without compromising quality.",
+      description: "Quick and efficient service without quality loss.",
       icon: <FaClock />,
     },
     {
       title: "Custom Solutions",
-      description: "Tailored editing styles to fit your specific vision.",
+      description: "Tailored editing to match your unique vision.",
       icon: <FaCogs />,
     },
     {
       title: "Affordable Pricing",
-      description: "Top-tier quality at budget-friendly rates.",
+      description: "Premium quality at competitive prices.",
       icon: <FaDollarSign />,
     },
   ];
 
   return (
-    <section className="min-h-screen bg-white text-gray-900 py-12 px-6 flex flex-col md:flex-row-reverse items-center gap-10">
-      <div className="md:w-1/2">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
+    <section className="bg-white text-gray-900 py-20 px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="text-4xl md:text-5xl font-bold text-black text-center md:text-left"
+          className="text-center mb-16"
         >
-          Why Choose Us?
-        </motion.h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Why Choose Us?
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Discover why our clients trust us for top-tier video editing with
+            speed, quality, and affordability.
+          </p>
+        </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: false }}
-          className="text-lg text-gray-700 mt-2 text-center md:text-left"
-        >
-          Our streamlined process ensures quality, speed, and satisfaction.
-        </motion.p>
 
-        <div className="mt-8 grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.7,
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
               viewport={{ once: false }}
               whileHover={{
                 scale: 1.05,
-                transition: { duration: 0.3, ease: "easeInOut" },
+                boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.15)",
               }}
-              className="flex items-center space-x-4 p-6 bg-gray-100 border border-gray-300 rounded-lg shadow-md transition-transform"
+              className="bg-gray-50 p-8 rounded-xl shadow-lg transform transition-transform"
             >
               <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
+                initial={{ rotate: -45, scale: 0 }}
+                whileInView={{ rotate: 0, scale: 1 }}
                 transition={{
-                  duration: 0.4,
-                  delay: index * 0.2,
+                  duration: 0.5,
+                  delay: index * 0.3,
                   ease: "easeOut",
                 }}
                 viewport={{ once: false }}
-                whileHover={{ rotate: 10 }}
-                className="text-4xl"
+                className="text-5xl mb-6 text-black"
               >
                 {step.icon}
               </motion.div>
-
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {step.title}
-                </h2>
-                <p className="text-gray-700 mt-1">{step.description}</p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-4">{step.title}</h2>
+              <p className="text-gray-600">{step.description}</p>
             </motion.div>
           ))}
         </div>
-      </div>
-
-      <div className="md:w-1/2 h-[600px] relative rounded-lg overflow-hidden">
-        <video
-          className="w-full h-full object-cover rounded-lg shadow-lg"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/work.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </section>
   );

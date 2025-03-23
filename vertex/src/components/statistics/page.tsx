@@ -35,7 +35,7 @@ export default function Statistics() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-50 text-gray-900 py-20 px-6">
+    <div className="bg-white text-gray-900 py-20 px-6">
       <section className="max-w-5xl mx-auto text-center">
         <motion.h1
           whileInView={{ opacity: 1, y: 0 }}

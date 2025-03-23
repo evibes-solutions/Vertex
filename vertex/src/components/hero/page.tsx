@@ -8,20 +8,17 @@ export default function Hero() {
     <section className="relative h-screen bg-white flex flex-col lg:flex-row items-center justify-end text-black overflow-hidden px-5 lg:px-10">
       <Navbar />
 
-      {/* Image Div (Hidden on Mobile) */}
       <div className="hidden lg:block absolute left-0 top-0 h-full w-1/2">
         <Image
           src="/background.PNG"
           alt="Background"
           fill
           sizes="50vw"
-          className="object-cover"
+          className="object-cover object-[70%]"
           quality={100}
           priority
         />
       </div>
-
-      {/* Text Div */}
       <div className="relative max-w-2xl p-5 text-center flex flex-col items-center justify-center h-full">
         <motion.h1
           className="text-3xl md:text-6xl font-bold mb-4 text-black"
