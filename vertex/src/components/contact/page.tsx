@@ -1,17 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // Prevents hydration mismatch
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!captchaValue) {
-      alert("Please verify you are not a robot.");
-      return;
-    }
     alert("Form submitted successfully!");
   };
 
@@ -20,9 +35,8 @@ export default function Contact() {
       <div className="max-w-4xl w-full">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false }}
           className="text-3xl md:text-5xl font-bold text-black text-center"
         >
           Contact Us
@@ -39,7 +53,10 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="firstName"
                 placeholder="Enter your first name"
+                value={formData.firstName}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               />
@@ -49,7 +66,10 @@ export default function Contact() {
               <label className="text-black font-semibold mb-2">Last Name</label>
               <input
                 type="text"
+                name="lastName"
                 placeholder="Enter your last name"
+                value={formData.lastName}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               />
@@ -59,7 +79,10 @@ export default function Contact() {
               <label className="text-black font-semibold mb-2">Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               />
@@ -69,7 +92,10 @@ export default function Contact() {
               <label className="text-black font-semibold mb-2">Phone</label>
               <input
                 type="text"
+                name="phone"
                 placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               />
@@ -81,7 +107,10 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="company"
                 placeholder="Enter your company name"
+                value={formData.company}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
               />
             </div>
@@ -89,18 +118,14 @@ export default function Contact() {
             <div className="flex flex-col md:col-span-2">
               <label className="text-black font-semibold mb-2">Message</label>
               <textarea
+                name="message"
                 placeholder="Enter your message"
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               ></textarea>
-            </div>
-
-            <div className="md:col-span-2 flex justify-start">
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                onChange={setCaptchaValue}
-              />
             </div>
 
             <div className="md:col-span-2 flex justify-end">
