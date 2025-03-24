@@ -14,12 +14,12 @@ export default function Hero() {
           alt="Background"
           fill
           sizes="50vw"
-          className="object-cover object-[70%]"
+          className="object-cover object-[90%]"
           quality={100}
           priority
         />
       </div>
-      <div className="relative max-w-2xl p-5 text-center flex flex-col items-center justify-center h-full">
+      <div className="relative max-w-2xl mt-10 p-5 text-center flex flex-col items-center justify-center h-full">
         <motion.h1
           className="text-3xl md:text-6xl font-bold mb-4 text-black"
           initial={{ opacity: 0 }}
