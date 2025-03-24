@@ -39,7 +39,7 @@ const Page = () => {
         <Statistics />
       </section>
 
-      <section id="contact">
+      <section id="contactus">
         <Contact />
       </section>
 
