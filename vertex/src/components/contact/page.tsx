@@ -19,7 +19,7 @@ export default function Contact() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Prevents hydration mismatch
+  if (!mounted) return null; 
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -134,7 +134,7 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* ✅ ReCAPTCHA Fix */}
+   
             <div className="md:col-span-2 flex justify-start">
               {mounted && (
                 <ReCAPTCHA
