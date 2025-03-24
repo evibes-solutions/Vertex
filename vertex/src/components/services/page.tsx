@@ -138,7 +138,7 @@ export default function Services() {
               </p>
               <motion.a
                 href={service.link}
-                className="px-4 py-2 bg-black text-white rounded-lg text-lg font-medium transition hover:bg-gray-900"
+                className="px-4 py-2 bg-black text-white rounded-lg text-lg font-medium transition hover:bg-white hover:text-black"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
