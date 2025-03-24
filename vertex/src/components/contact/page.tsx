@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const [mounted, setMounted] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -27,6 +29,10 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!captchaValue) {
+      alert("Please verify you are not a robot.");
+      return;
+    }
     alert("Form submitted successfully!");
   };
 
@@ -126,6 +132,16 @@ export default function Contact() {
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               ></textarea>
+            </div>
+
+            {/* ✅ ReCAPTCHA Fix */}
+            <div className="md:col-span-2 flex justify-start">
+              {mounted && (
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  onChange={setCaptchaValue}
+                />
+              )}
             </div>
 
             <div className="md:col-span-2 flex justify-end">
