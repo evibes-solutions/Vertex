@@ -4,7 +4,7 @@ import Hero from "@/components/hero/page";
 import Services from "@/components/services/page";
 import Workflow from "@/components/workflow/page";
 import Testimonials from "@/components/testimonals/page";
-//import Contact from "@/components/contact/page";
+import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
 import Statistics from "@/components/statistics/page";
@@ -39,9 +39,9 @@ const Page = () => {
         <Statistics />
       </section>
 
-      {/* <section id="contactus">
+      <section id="contactus">
         <Contact />
-      </section> */}
+      </section>
 
       <Footer />
     </div>
