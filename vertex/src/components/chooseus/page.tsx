@@ -29,7 +29,6 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-white text-gray-900 py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,12 +39,14 @@ export default function WhyChooseUs() {
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
             Why Choose Us?
           </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover why our clients trust us for top-tier video editing with
-            speed, quality, and affordability.
+          <p className="mt-4 text-lg  text-gray-600 max-w-3xl mx-auto">
+            At <span className="font-semibold">Vertex Studio</span>, we turn
+            your raw footage into visually stunning masterpieces. Whether its
+            crafting compelling narratives or delivering seamless visual
+            effects, our team ensures every project meets the highest standards
+            of excellence.
           </p>
         </motion.div>
-
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (

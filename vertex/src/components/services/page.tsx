@@ -89,7 +89,6 @@ export default function Services() {
         id="services"
         className="min-h-screen py-12 px-6 flex flex-col items-center"
       >
-        {/* Header Section */}
         <div className="text-center mb-8">
           <motion.h1
             initial={{ opacity: 0, y: -30 }}
@@ -112,7 +111,6 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Service Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl"
           initial="hidden"
@@ -131,7 +129,7 @@ export default function Services() {
               viewport={{ once: false }}
               className="relative w-full h-[400px] bg-gray-100 border border-gray-300 shadow-lg rounded-lg overflow-hidden text-center flex flex-col items-center justify-between p-6 transition duration-300 ease-in-out hover:bg-black hover:text-white"
             >
-              <div className="mb-4 p-4 bg-gray-200 rounded-full flex items-center justify-center">
+              <div className="mb-4 p-4 text-black bg-gray-200 rounded-full flex items-center justify-center">
                 {service.icon()}
               </div>
               <h3 className="text-3xl font-semibold">{service.title}</h3>
@@ -151,8 +149,6 @@ export default function Services() {
             </motion.div>
           ))}
         </motion.div>
-
-      
       </section>
     </motion.div>
   );

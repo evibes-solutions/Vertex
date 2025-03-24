@@ -45,14 +45,21 @@ export default function Testimonials() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false }}
+          className="text-3xl md:text-5xl font-bold text-black text-center"
+        >
           What Our Customers Say
-        </h1>
+        </motion.h1>
         <motion.p
           className="text-base sm:text-lg text-gray-700 mt-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false }}
         >
           Hear from our happy clients about their experience with Vertex Studio.
         </motion.p>

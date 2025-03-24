@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <section className="bg-white text-black min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 py-12">
-      {/* Left Section - Text Content */}
+    
       <motion.div
         className="lg:w-1/2 max-w-xl space-y-8"
         initial={{ opacity: 0, x: -50 }}
@@ -45,7 +45,6 @@ export default function About() {
         </motion.a>
       </motion.div>
 
-      {/* Right Section - Visual Showcase (No Shadow) */}
       <motion.div
         className="relative w-full lg:w-1/2 h-[400px] lg:h-[500px] rounded-lg overflow-hidden"
         initial={{ opacity: 0, x: 50 }}

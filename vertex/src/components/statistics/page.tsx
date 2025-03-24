@@ -14,12 +14,12 @@ export default function Statistics() {
   const stats = [
     {
       title: "Completed Projects",
-      value: 200,
+      value: 1000,
       icon: <FaCheckCircle size={50} />,
     },
     {
       title: "Happy Clients",
-      value: 120,
+      value: 800,
       icon: <FaSmile size={50} />,
     },
     {
@@ -38,14 +38,14 @@ export default function Statistics() {
     <div className="bg-white text-gray-900 py-20 px-6">
       <section className="max-w-5xl mx-auto text-center">
         <motion.h1
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="text-3xl md:text-5xl font-bold"
+          className="text-3xl md:text-5xl font-bold text-black text-center"
         >
-          We Have Completed <span className="text-blue-600">500+</span> Projects{" "}
-          <span className="text-blue-600">Successfully</span>
+          We Have Completed <span className="text-blue-600">1000+</span>{" "}
+          Projects <span className="text-blue-600">Successfully</span>
         </motion.h1>
       </section>
 
