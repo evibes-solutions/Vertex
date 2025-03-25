@@ -148,7 +148,7 @@ export default function Contact() {
 
             <div className=" justify-center md:col-span-2">
               <ReCAPTCHA
-                sitekey="6LfCWv8qAAAAAKRxBxs2OL0bUrste40CTq4Irg5U"
+                sitekey="6LdZXP8qAAAAAB4e6rHycGMNO0e6A4gn79VyR59i"
                 onChange={setCaptchaValue}
               />
             </div>
