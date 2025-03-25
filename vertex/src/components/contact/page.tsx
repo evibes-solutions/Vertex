@@ -37,13 +37,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-screen bg-white text-black py-12 px-6 flex items-center justify-center">
+    <section className="min-h-screen bg-white text-black py-12 px-4 sm:px-6 flex items-center justify-center">
       <div className="max-w-4xl w-full">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-5xl font-bold text-black text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-black text-center"
         >
           Contact Us
         </motion.h1>
@@ -52,7 +52,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-md md:text-lg text-gray-700 mt-4 text-center max-w-xl mx-auto"
+          className="text-md sm:text-lg text-gray-700 mt-4 text-center max-w-xl mx-auto"
         >
           Feel free to reach out! Just send us an email, and we’ll take care of
           the rest. We’ll get in touch, discuss your project details, and
@@ -60,10 +60,10 @@ export default function Contact() {
           video.
         </motion.p>
 
-        <div className="p-8 rounded-lg">
+        <div className="p-4 sm:p-8 rounded-lg">
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             <div className="flex flex-col">
               <label className="text-black font-semibold mb-2">
@@ -93,7 +93,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex flex-col md:col-span-2">
+            <div className="flex flex-col sm:col-span-2">
               <label className="text-black font-semibold mb-2">Email</label>
               <input
                 type="email"
@@ -106,7 +106,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex flex-col md:col-span-2">
+            <div className="flex flex-col sm:col-span-2">
               <label className="text-black font-semibold mb-2">Phone</label>
               <input
                 type="text"
@@ -119,7 +119,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex flex-col md:col-span-2">
+            <div className="flex flex-col sm:col-span-2">
               <label className="text-black font-semibold mb-2">
                 Company Name
               </label>
@@ -133,7 +133,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex flex-col md:col-span-2">
+            <div className="flex flex-col sm:col-span-2">
               <label className="text-black font-semibold mb-2">Message</label>
               <textarea
                 name="message"
@@ -146,14 +146,14 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <div className=" justify-center md:col-span-2">
+            <div className="flex justify-center sm:col-span-2">
               <ReCAPTCHA
                 sitekey="6LdZXP8qAAAAAB4e6rHycGMNO0e6A4gn79VyR59i"
                 onChange={setCaptchaValue}
               />
             </div>
 
-            <div className="md:col-span-2 flex justify-end">
+            <div className="sm:col-span-2 flex justify-end">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
