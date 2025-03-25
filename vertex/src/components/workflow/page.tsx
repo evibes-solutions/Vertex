@@ -48,7 +48,7 @@ export default function Workflow() {
   ];
 
   return (
-    <section className="relative min-h-[80vh] bg-gray-50 text-gray-900 py-10 px-6 flex flex-col items-center justify-center">
+    <section className="relative min-h-[80vh] bg-white text-gray-900 py-10 px-6 flex flex-col items-center justify-center">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}

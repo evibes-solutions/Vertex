@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative h-screen bg-white flex flex-col lg:flex-row items-center justify-end text-black overflow-hidden px-5 lg:px-10">
       <Navbar />
 
-      <div className="hidden lg:block absolute left-20 top-0 h-full w-1/2">
+      <div className="hidden lg:block absolute left-10 top-0 h-full w-1/2">
         <Image
           src="/background.PNG"
           alt="Background"
@@ -52,7 +52,7 @@ export default function Hero() {
           high-quality video content.
         </motion.p>
         <motion.a
-          href="/contact"
+          href="#contactus"
           className="px-6 py-3 bg-black hover:bg-gray-900 text-white rounded-lg text-lg font-medium transition"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
