@@ -25,15 +25,39 @@ const cardVariants = {
   }),
 };
 
-const hoverEffect = {
-  scale: 1.05,
-  transition: { duration: 0.3, ease: "easeOut" },
-};
 
 export default function Services() {
   const services = [
     {
-      title: "Professional Video Editing",
+      title: "Wedding & Event Editing",
+      description:
+        "Beautifully edited wedding and event videos that capture emotions and special moments.",
+      icon: () => <FaHeart size={40} />,
+      link: "/services/wedding-editing",
+    },
+    {
+      title: "Social Media Content Editing",
+      description:
+        "Short-form, high-impact videos optimized for Instagram, TikTok, and other platforms.",
+      icon: () => <FaShareSquare size={40} />,
+      link: "/services/social-media-editing",
+    },
+    {
+      title: "Corporate & Commercial Video Editing",
+      description:
+        "Professional corporate videos and brand promos with a high production value.",
+      icon: () => <FaBuilding size={40} />,
+      link: "/services/corporate-editing",
+    },
+    {
+      title: "Documentary & Short Film Editing",
+      description:
+        "Editing that enhances storytelling, pacing, and overall visual appeal for filmmakers and storytellers.",
+      icon: () => <FaVideo size={40} />,
+      link: "/services/documentary-editing",
+    },
+    {
+      title: "Youtube Content Editing",
       description:
         "Crisp, smooth, and engaging edits that enhance the flow and impact of your footage.",
       icon: () => <FaFilm size={40} />,
@@ -45,34 +69,6 @@ export default function Services() {
         "Clear and immersive sound with noise reduction, background music, and professional sound effects.",
       icon: () => <FaMusic size={40} />,
       link: "/services/audio-editing",
-    },
-    {
-      title: "Wedding & Event Editing",
-      description:
-        "Beautifully edited wedding and event videos that capture emotions and special moments.",
-      icon: () => <FaHeart size={40} />,
-      link: "/services/wedding-editing",
-    },
-    {
-      title: "Corporate & Commercial Video Editing",
-      description:
-        "Professional corporate videos and brand promos with a high production value.",
-      icon: () => <FaBuilding size={40} />,
-      link: "/services/corporate-editing",
-    },
-    {
-      title: "Social Media Content Editing",
-      description:
-        "Short-form, high-impact videos optimized for Instagram, TikTok, and other platforms.",
-      icon: () => <FaShareSquare size={40} />,
-      link: "/services/social-media-editing",
-    },
-    {
-      title: "Documentary & Short Film Editing",
-      description:
-        "Editing that enhances storytelling, pacing, and overall visual appeal for filmmakers and storytellers.",
-      icon: () => <FaVideo size={40} />,
-      link: "/services/documentary-editing",
     },
   ];
 
@@ -125,9 +121,9 @@ export default function Services() {
               variants={cardVariants}
               initial="hidden"
               animate="visible"
-              whileHover={hoverEffect}
               viewport={{ once: false }}
-              className="relative w-full h-[400px] bg-gray-100 border border-gray-300 shadow-lg rounded-lg overflow-hidden text-center flex flex-col items-center justify-between p-6 transition duration-300 ease-in-out hover:bg-black hover:text-white"
+              whileHover="hover"
+              className="relative w-full h-[400px] bg-gray-100 border border-gray-300 shadow-lg rounded-lg overflow-hidden text-center flex flex-col items-center justify-between p-6 transition duration-300 ease-in-out hover:bg-black hover:text-white group"
             >
               <div className="mb-4 p-4 text-black bg-gray-200 rounded-full flex items-center justify-center">
                 {service.icon()}
@@ -138,7 +134,7 @@ export default function Services() {
               </p>
               <motion.a
                 href={service.link}
-                className="px-4 py-2 bg-black text-white rounded-lg text-lg font-medium transition hover:bg-white hover:text-black"
+                className="px-4 py-2 bg-black text-white rounded-lg text-lg font-medium transition group-hover:bg-white group-hover:text-black"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}

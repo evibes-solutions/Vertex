@@ -8,29 +8,24 @@ import {
   useInView,
 } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import { FaCheckCircle, FaSmile, FaCogs, FaTrophy } from "react-icons/fa";
+import { FaCheckCircle, FaSmile, FaCogs } from "react-icons/fa";
 
 export default function Statistics() {
   const stats = [
     {
       title: "Completed Projects",
-      value: 1000,
+      value: 1200,
       icon: <FaCheckCircle size={50} />,
     },
     {
       title: "Happy Clients",
-      value: 800,
+      value: 450,
       icon: <FaSmile size={50} />,
     },
     {
-      title: "Services Provided",
-      value: 130,
+      title: "Free Consultations",
+      value: 1800,
       icon: <FaCogs size={50} />,
-    },
-    {
-      title: "Winning Awards",
-      value: 50,
-      icon: <FaTrophy size={50} />,
     },
   ];
 
@@ -49,7 +44,7 @@ export default function Statistics() {
         </motion.h1>
       </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
@@ -101,7 +96,7 @@ function AnimatedCounter({ finalValue }: { finalValue: number }) {
 
   return (
     <motion.h2 ref={ref} className="text-4xl font-bold text-gray-900">
-      {displayValue}
+      {displayValue}+
     </motion.h2>
   );
 }

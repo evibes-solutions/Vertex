@@ -14,14 +14,14 @@ export default function Workflow() {
       icon: <FaClipboardList className="text-black text-5xl" />,
       title: "Consultation & Project Briefing",
       description:
-        "We discuss your project details, requirements, and expectations.",
+        "Get in touch with us, and we’ll schedule a call or respond to your email. In this consultation, we’ll discuss your project details, requirements, and expectations to ensure we bring your vision to life.",
       bgColor: "bg-gradient-to-r from-blue-500 to-blue-700",
     },
     {
       icon: <FaFilm className="text-black text-5xl" />,
       title: "Reviewing Raw Footage",
       description:
-        "Our team analyzes and organizes your footage to plan the best editing approach.",
+        "You can share your raw footage with us via WeTransfer or Google Drive. The best transfer method will be decided during our initial meeting to ensure a smooth and efficient workflow.",
       bgColor: "bg-gradient-to-r from-red-500 to-red-700",
     },
     {

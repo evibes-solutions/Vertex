@@ -3,28 +3,33 @@ import { motion } from "framer-motion";
 import { FaFilm, FaClock, FaCogs, FaDollarSign } from "react-icons/fa";
 
 export default function WhyChooseUs() {
-  const steps = [
-    {
-      title: "High-Quality Editing",
-      description: "Professional-grade edits with cinematic quality.",
-      icon: <FaFilm />,
-    },
-    {
-      title: "Fast Turnaround Time",
-      description: "Quick and efficient service without quality loss.",
-      icon: <FaClock />,
-    },
-    {
-      title: "Custom Solutions",
-      description: "Tailored editing to match your unique vision.",
-      icon: <FaCogs />,
-    },
-    {
-      title: "Affordable Pricing",
-      description: "Premium quality at competitive prices.",
-      icon: <FaDollarSign />,
-    },
-  ];
+const steps = [
+  {
+    title: "High-Quality Editing",
+    description:
+      "Professional-grade edits with cinematic quality, ensuring your content stands out and leaves a lasting impression.",
+    icon: <FaFilm />,
+  },
+  {
+    title: "Fast Turnaround Time",
+    description:
+      "Depending on your video, we’ll deliver the first draft within 24 hours, ensuring a quick and efficient editing process.",
+    icon: <FaClock />,
+  },
+  {
+    title: "Custom Solutions",
+    description:
+      "We work closely with you to deliver high-quality edits tailored to your vision, ensuring the best possible outcome.",
+    icon: <FaCogs />,
+  },
+  {
+    title: "Affordable Pricing",
+    description:
+      "Get premium-quality video editing at competitive prices without compromising on speed or the final output's excellence.",
+    icon: <FaDollarSign />,
+  },
+];
+
 
   return (
     <section className="bg-white text-gray-900 py-20 px-6 overflow-hidden">

@@ -42,6 +42,17 @@ export default function Contact() {
           Contact Us
         </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-md md:text-lg text-gray-700 mt-4 text-center max-w-xl mx-auto"
+        >
+          Feel free to reach out! Just send us an email, and we’ll take care of the rest.
+          We’ll get in touch, discuss your project details, and hopefully, bring your vision 
+          to life with a professionally edited video.
+        </motion.p>
+
         <div className="p-8 rounded-lg">
           <form
             onSubmit={handleSubmit}

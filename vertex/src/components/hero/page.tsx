@@ -59,7 +59,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: false }}
         >
-          Get Started
+          Get Your First Edit Free
         </motion.a>
       </div>
     </section>
