@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const [mounted, setMounted] = useState(false);
@@ -12,6 +13,7 @@ export default function Contact() {
     company: "",
     message: "",
   });
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -27,6 +29,10 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA verification.");
+      return;
+    }
     alert("Form submitted successfully!");
   };
 
@@ -48,9 +54,10 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-md md:text-lg text-gray-700 mt-4 text-center max-w-xl mx-auto"
         >
-          Feel free to reach out! Just send us an email, and we’ll take care of the rest.
-          We’ll get in touch, discuss your project details, and hopefully, bring your vision 
-          to life with a professionally edited video.
+          Feel free to reach out! Just send us an email, and we’ll take care of
+          the rest. We’ll get in touch, discuss your project details, and
+          hopefully, bring your vision to life with a professionally edited
+          video.
         </motion.p>
 
         <div className="p-8 rounded-lg">
@@ -137,6 +144,13 @@ export default function Contact() {
                 className="p-3 rounded bg-white text-black border border-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 required
               ></textarea>
+            </div>
+
+            <div className=" justify-center md:col-span-2">
+              <ReCAPTCHA
+                sitekey="6LfCWv8qAAAAAKRxBxs2OL0bUrste40CTq4Irg5U"
+                onChange={setCaptchaValue}
+              />
             </div>
 
             <div className="md:col-span-2 flex justify-end">
