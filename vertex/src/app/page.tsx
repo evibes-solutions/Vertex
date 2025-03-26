@@ -8,6 +8,13 @@ import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
 import Statistics from "@/components/statistics/page";
 
+import Script from "next/script";
+
+<Script
+  src="https://www.google.com/recaptcha/api.js"
+  strategy="beforeInteractive" 
+/>;
+
 const Page = () => {
   return (
     <div>
