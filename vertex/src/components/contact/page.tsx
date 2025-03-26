@@ -61,8 +61,6 @@ export default function Contact() {
       message: "",
     });
     setCaptchaValue(null);
-
-    window.location.reload();
   };
 
   return (
