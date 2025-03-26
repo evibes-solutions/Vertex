@@ -61,6 +61,8 @@ export default function Contact() {
       message: "",
     });
     setCaptchaValue(null);
+
+    window.location.reload();
   };
 
   return (
@@ -177,6 +179,7 @@ export default function Contact() {
               <ReCAPTCHA
                 sitekey="6LdZXP8qAAAAAB4e6rHycGMNO0e6A4gn79VyR59i"
                 onChange={setCaptchaValue}
+                size={window.innerWidth < 768 ? "compact" : "normal"}
               />
             </div>
 
