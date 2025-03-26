@@ -29,11 +29,38 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!captchaValue) {
       alert("Please complete the reCAPTCHA verification.");
       return;
     }
+
+    const formAction = "https://formsubmit.co/evibessolutions@gmail.com";
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = formAction;
+
+    Object.entries(formData).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
     alert("Form submitted successfully!");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+    });
+    setCaptchaValue(null);
   };
 
   return (
