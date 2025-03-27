@@ -35,7 +35,7 @@ export default function Contact() {
       return;
     }
 
-    const formAction = "https://formsubmit.co/evibessolutions@gmail.com";
+    const formAction = "https://formsubmit.co/vertex.studio.va@gmail.com";
 
     const form = document.createElement("form");
     form.method = "POST";
