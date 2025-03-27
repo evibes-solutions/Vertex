@@ -139,7 +139,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: false }}
               >
-                Learn More
+                Contact Us
               </motion.a>
             </motion.div>
           ))}
