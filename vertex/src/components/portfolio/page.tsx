@@ -32,6 +32,7 @@ export default function Portfolio() {
             autoPlay
             loop
             muted
+            preload="metadata"
             className="w-full h-full object-cover"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
