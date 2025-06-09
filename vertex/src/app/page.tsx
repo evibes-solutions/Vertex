@@ -7,6 +7,7 @@ import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import WhyChooseUs from "@/components/chooseus/page";
 import Statistics from "@/components/statistics/page";
+import Portfolio from "@/components/portfolio/page";
 
 import Script from "next/script";
 
@@ -27,6 +28,10 @@ const Page = () => {
 
       <section id="workflow">
         <Workflow />
+      </section>
+
+        <section id="portfolio">
+        <Portfolio />
       </section>
 
       <section id="aboutus">
