@@ -20,10 +20,20 @@ export default function Portfolio() {
   const goToSlide = (index: number) => setCurrent(index);
 
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-bold text-black mb-8">Portfolio</h1>
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center">
+      
+      <motion.h1
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false }}
+            className="text-3xl md:text-5xl font-bold mt-20 mb-5 text-black text-center"
+          >
+            Portfolio
+          </motion.h1>
 
-      <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-2xl shadow-xl">
+
+      <div className="relative w-full max-w-7xl aspect-video flex-grow overflow-hidden rounded-xl shadow-xl">
         <AnimatePresence mode="wait">
           <motion.video
             key={current}
@@ -32,7 +42,7 @@ export default function Portfolio() {
             autoPlay
             loop
             muted
-            preload="metadata"
+            preload="auto"
             className="w-full h-full object-cover"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -41,29 +51,28 @@ export default function Portfolio() {
           />
         </AnimatePresence>
 
-
+       
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-2 rounded-full transition"
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full z-10"
         >
           <ArrowLeft size={24} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-2 rounded-full transition"
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full z-10"
         >
           <ArrowRight size={24} />
         </button>
       </div>
 
-
-      <div className="flex gap-2 mt-6">
+      <div className="flex gap-2 mt-6 mb-8">
         {videoUrls.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              current === index ? 'bg-black scale-110' : 'bg-black/30'
+              current === index ? 'bg-black scale-110' : 'bg-gray-700'
             }`}
           />
         ))}

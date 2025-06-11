@@ -21,6 +21,10 @@ const Page = () => {
     <div>
       <Navbar />
       <Hero />
+      
+      <section id="portfolio">
+        <Portfolio />
+      </section>
 
       <section id="services">
         <Services />
@@ -28,10 +32,6 @@ const Page = () => {
 
       <section id="workflow">
         <Workflow />
-      </section>
-
-        <section id="portfolio">
-        <Portfolio />
       </section>
 
       <section id="aboutus">
