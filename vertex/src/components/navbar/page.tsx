@@ -37,7 +37,7 @@ export default function Navbar() {
 
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center backdrop-blur-lg py-4 space-y-4 absolute w-full left-0 bg-white shadow-lg">
-          {["Portfolio","Services", "About Us", "Workflow", "Portfolio", "Contact Us"].map((item) => (
+          {["Portfolio","Services", "About Us", "Workflow","Contact Us"].map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase().replace(/\s/g, "")}`}
