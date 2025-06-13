@@ -20,20 +20,20 @@ export default function Portfolio() {
   const goToSlide = (index: number) => setCurrent(index);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-      
+    <div className="flex flex-col min-h-screen bg-white">
+     
       <motion.h1
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false }}
-            className="text-3xl md:text-5xl font-bold mt-20 mb-5 text-black text-center"
-          >
-            Portfolio
-          </motion.h1>
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+        className="text-3xl md:text-5xl font-bold mt-10 mb-6 text-black text-center"
+      >
+        Portfolio
+      </motion.h1>
 
-
-      <div className="relative w-full max-w-7xl aspect-video flex-grow overflow-hidden rounded-xl shadow-xl">
+     
+      <div className="relative w-full flex-1 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.video
             key={current}
@@ -51,7 +51,7 @@ export default function Portfolio() {
           />
         </AnimatePresence>
 
-       
+
         <button
           onClick={prevSlide}
           className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full z-10"
@@ -66,12 +66,13 @@ export default function Portfolio() {
         </button>
       </div>
 
-      <div className="flex gap-2 mt-6 mb-8">
+     
+      <div className="flex justify-center gap-2 mt-6 mb-10">
         {videoUrls.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-4 h-4 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
               current === index ? 'bg-black scale-110' : 'bg-gray-700'
             }`}
           />
