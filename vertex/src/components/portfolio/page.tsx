@@ -33,7 +33,7 @@ export default function Portfolio() {
       </motion.h1>
 
      
-      <div className="relative w-full flex-1 overflow-hidden">
+      <div className="relative w-full aspect-video overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.video
             key={current}
@@ -64,10 +64,11 @@ export default function Portfolio() {
         >
           <ArrowRight size={24} />
         </button>
+        
       </div>
 
      
-      <div className="flex justify-center gap-2 mt-6 mb-10">
+      <div className="flex justify-center gap-2 mt-6 mb-2">
         {videoUrls.map((_, index) => (
           <button
             key={index}
