@@ -20,7 +20,9 @@ const Page = () => {
   return (
     <div>
       <Navbar />
+      <section id="home">
       <Hero />
+      </section>
       
       <section id="portfolio">
         <Portfolio />

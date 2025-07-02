@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
 
         <ul className="hidden md:flex text-lg space-x-6">
-          {["Portfolio","Services", "About Us", "Workflow", "Contact Us"].map((item) => (
+          {["Home","Portfolio","Services", "About Us", "Workflow", "Contact Us"].map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase().replace(/\s/g, "")}`}
@@ -36,8 +36,9 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center backdrop-blur-lg py-4 space-y-4 absolute w-full left-0 bg-white shadow-lg">
-          {["Portfolio","Services", "About Us", "Workflow","Contact Us"].map((item) => (
+       <ul className="md:hidden flex flex-col items-center backdrop-blur-md bg-white/20 py-4 space-y-4 absolute w-full left-0 shadow-lg">
+
+          {["Home","Portfolio","Services", "About Us", "Workflow","Contact Us"].map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase().replace(/\s/g, "")}`}
