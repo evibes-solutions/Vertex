@@ -34,19 +34,21 @@ export default function Portfolio() {
       <div className="relative w-full aspect-video overflow-hidden flex-1">
         <AnimatePresence mode="wait">
           <motion.video
-            key={current}
-            src={videoUrls[current]}
-            controls
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.6 }}
-          />
+              key={current}
+              src={videoUrls[current]}
+              poster={`/${current + 1}.png`} 
+              controls
+              autoPlay
+              loop
+              muted
+              preload="metadata" 
+              className="w-full h-full object-cover"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.6 }}
+            />
+
         </AnimatePresence>
 
         <button
