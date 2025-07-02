@@ -27,7 +27,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false }}
-        className="text-3xl md:text-5xl font-bold mt-10 mb-6 text-black text-center"
+        className="text-3xl md:text-5xl font-bold mb-6 text-black text-center"
       >
         Portfolio
       </motion.h1>
