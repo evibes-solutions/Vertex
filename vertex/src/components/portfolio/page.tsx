@@ -20,20 +20,18 @@ export default function Portfolio() {
   const goToSlide = (index: number) => setCurrent(index);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-     
+    <div className="flex flex-col min-h-[100svh] bg-white">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false }}
-        className="text-3xl md:text-5xl font-bold mb-6 text-black text-center"
+        className="text-3xl md:text-5xl font-bold mb-6 text-black text-center px-4 pt-4"
       >
         Portfolio
       </motion.h1>
 
-     
-      <div className="relative w-full aspect-video overflow-hidden">
+      <div className="relative w-full aspect-video overflow-hidden flex-1">
         <AnimatePresence mode="wait">
           <motion.video
             key={current}
@@ -51,29 +49,26 @@ export default function Portfolio() {
           />
         </AnimatePresence>
 
-
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full z-10"
+          className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-1.5 sm:p-2 rounded-full z-10"
         >
-          <ArrowLeft size={24} />
+          <ArrowLeft size={20} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full z-10"
+          className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-1.5 sm:p-2 rounded-full z-10"
         >
-          <ArrowRight size={24} />
+          <ArrowRight size={20} />
         </button>
-        
       </div>
 
-     
-      <div className="flex justify-center gap-2 mt-6 mb-2">
+      <div className="flex justify-center gap-2 mt-4 mb-6">
         {videoUrls.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
               current === index ? 'bg-black scale-110' : 'bg-gray-700'
             }`}
           />
